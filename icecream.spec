@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.7.14a
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 2
 Group: Development/C
 Summary: Icecream is a distributed p2p based compile system
@@ -26,8 +26,18 @@ Icecream is a distributed p2p based compile system
 
 %post
 %_post_service icecream
+if [ -f /var/lock/subsys/icecream ]; then
+   %_sysconfdir/rc.d/init.d/icecream restart 1>&2;
+fi
+
+
 %preun
 %_preun_service icecream
+if [ "$1" = "0" ]; then
+   if [ -f /var/lock/subsys/icecream ]; then
+         %_sysconfdir/rc.d/init.d/icecream stop 1>&2
+   fi
+fi
 
 %files 
 %defattr(-,root,root,0755)
@@ -59,9 +69,17 @@ PreReq: rpm-helper
 
 %post scheduler
 %_post_service icecream-scheduler
+if [ -f /var/lock/subsys/icecream-scheduler ]; then
+   %_sysconfdir/rc.d/init.d/icecream-scheduler restart 1>&2;
+fi
 
 %preun scheduler
 %_preun_service icecream-scheduler
+if [ "$1" = "0" ]; then
+   if [ -f /var/lock/subsys/icecream-scheduler ]; then
+         %_sysconfdir/rc.d/init.d/icecream-scheduler stop 1>&2
+   fi
+fi
 
 %files scheduler
 %defattr(-,root,root,0755)
