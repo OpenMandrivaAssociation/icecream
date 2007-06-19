@@ -1,7 +1,7 @@
 %define icecreamdir %{_libdir}/icecc
 
 Name: icecream
-Version: 0.7.14
+Version: 0.7.14a
 Release: %mkrel 1
 Epoch: 2
 Group: Development/C
@@ -95,6 +95,9 @@ rm -rf %{buildroot}
 
 %build
 make -f Makefile.cvs
+
+export CFLAGS="%optflags"
+export CXXFLAGS="%optflags"
 
 %configure2_5x
 
