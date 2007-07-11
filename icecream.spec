@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.7.14a
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 2
 Group: Development/C
 Summary: Icecream is a distributed p2p based compile system
@@ -41,7 +41,7 @@ Icecream is a distributed p2p based compile system
 %{icecreamdir}/bin/*c++
 %{_sysconfdir}/rc.d/init.d/icecream
 %config(noreplace) %{_sysconfdir}/sysconfig/icecream
-%attr(0755,root,root) %{_sysconfdir}/profile.d/*
+%{_sysconfdir}/profile.d/*
 %config(noreplace) %{_sysconfdir}/logrotate.d/icecream
 %defattr(0644,root,root,1777)
 %dir /var/cache/icecream
@@ -122,8 +122,9 @@ make DESTDIR=%{buildroot} install
 install -m 755 %{SOURCE1} %buildroot%_sysconfdir/rc.d/init.d/icecream
 install -m 755 %{SOURCE2} %buildroot%_sysconfdir/rc.d/init.d/icecream-scheduler
 install -m 644 %{SOURCE3} %buildroot%_sysconfdir/sysconfig/icecream
-install -m 644 %{SOURCE4} %buildroot%_sysconfdir/profile.d
-install -m 644 %{SOURCE5} %buildroot%_sysconfdir/profile.d
+# nb: prefixing icecream.sh by "80" so that it is sourced after 20colorgcc.sh
+install -m 644 %{SOURCE4} %buildroot%_sysconfdir/profile.d/80icecream.sh
+install -m 644 %{SOURCE5} %buildroot%_sysconfdir/profile.d/80icecream.csh
 install -m 644 %{SOURCE7} %buildroot%_sysconfdir/logrotate.d/icecream
 install -m 644 %{SOURCE8} %buildroot%_sysconfdir/logrotate.d/icecream-scheduler
 
