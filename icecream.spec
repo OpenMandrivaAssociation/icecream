@@ -52,7 +52,6 @@ Icecream is a distributed p2p based compile system
 %package scheduler
 Summary: Icecream scheduler
 Group: Development/C
-PreReq: rpm-helper
 Requires: chkconfig
 Requires: icecream = %epoch:%version
 Requires(post): rpm-helper
