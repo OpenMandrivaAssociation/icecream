@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.7.14a
-Release: %mkrel 5
+Release: %mkrel 6
 Epoch: 2
 Group: Development/C
 Summary: Icecream is a distributed p2p based compile system
@@ -18,7 +18,8 @@ Source7: logrotate.icecream
 Source8: logrotate.icecream-scheduler
 BuildRequires: kdelibs-devel
 Requires: chkconfig
-PreReq: rpm-helper
+Requires(post): rpm-helper
+Requires(preun): rpm-helper
 Buildroot: %{_tmppath}/%{name}-%{version}-root
 
 %description
@@ -54,6 +55,8 @@ Group: Development/C
 PreReq: rpm-helper
 Requires: chkconfig
 Requires: icecream = %epoch:%version
+Requires(post): rpm-helper
+Requires(preun): rpm-helper
 
 %description scheduler
 %{name} scheduler
@@ -76,7 +79,6 @@ Requires: icecream = %epoch:%version
 Summary: Icecream devel
 Group: Development/C
 Requires: icecream = %{epoch}:%{version}
-PreReq: rpm-helper
 
 %description devel
 %name devel
