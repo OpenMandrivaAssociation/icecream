@@ -20,7 +20,6 @@ BuildRequires: kdelibs-devel
 Requires: chkconfig
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
-Buildroot: %{_tmppath}/%{name}-%{version}-root
 
 %description
 Icecream is a distributed p2p based compile system
