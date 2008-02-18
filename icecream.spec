@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.7.14a
-Release: %mkrel 6
+Release: %mkrel 7
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
