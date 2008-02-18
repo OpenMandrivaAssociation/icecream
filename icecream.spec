@@ -5,7 +5,7 @@ Version: 0.7.14a
 Release: %mkrel 6
 Epoch: 2
 Group: Development/C
-Summary: Icecream is a distributed p2p based compile system
+Summary: Distributed p2p based compile system
 License: GPL
 URL: http://en.opensuse.org/Icecream
 Source0: ftp://ftp.suse.com/pub/projects/icecream/icecc-%{version}.tar.bz2
