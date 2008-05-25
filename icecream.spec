@@ -1,8 +1,8 @@
 %define icecreamdir %{_libdir}/icecc
 
 Name: icecream
-Version: 0.7.14a
-Release: %mkrel 7
+Version: 0.9.0
+Release: %mkrel 1
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
@@ -26,6 +26,7 @@ Buildroot: %{_tmppath}/%{name}-%{version}-root
 Icecream is a distributed p2p based compile system
 
 %post
+[ -d /var/cache/icecream ] && rm -rf /var/cache/icecream/*
 %_post_service icecream
 
 %preun
@@ -93,7 +94,7 @@ Requires: icecream = %{epoch}:%{version}
 %prep
 rm -rf %{buildroot}
 
-%setup -q -n %{name}
+%setup -q -n icecc-%version
 
 %build
 make -f Makefile.cvs
