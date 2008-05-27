@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.9.0
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
@@ -16,7 +16,6 @@ Source4: icecream.sh
 Source5: icecream.csh
 Source7: logrotate.icecream
 Source8: logrotate.icecream-scheduler
-BuildRequires: kdelibs-devel
 Requires: chkconfig
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
