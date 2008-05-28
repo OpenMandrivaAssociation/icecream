@@ -22,7 +22,7 @@ Requires(preun): rpm-helper
 Buildroot: %{_tmppath}/%{name}-%{version}-root
 
 %description
-Icecream is a distributed p2p based compile system
+Icecream is a distributed p2p based compile system.
 
 %post
 [ -d /var/cache/icecream ] && rm -rf /var/cache/icecream/*
