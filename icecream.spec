@@ -1,12 +1,12 @@
 %define icecreamdir %{_libdir}/icecc
 
 Name: icecream
-Version: 0.9.0
-Release: %mkrel 3
+Version: 0.9.1
+Release: %mkrel 1
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
-License: GPL
+License: GPLv2+
 URL: http://en.opensuse.org/Icecream
 Source0: ftp://ftp.suse.com/pub/projects/icecream/icecc-%{version}.tar.bz2
 Source1: init.icecream
@@ -96,7 +96,6 @@ rm -rf %{buildroot}
 %setup -q -n icecc-%version
 
 %build
-make -f Makefile.cvs
 
 export CFLAGS="%optflags"
 export CXXFLAGS="%optflags"
