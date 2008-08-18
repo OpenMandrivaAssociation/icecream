@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.9.1
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
@@ -101,6 +101,7 @@ rm -rf %{buildroot}
 export CFLAGS="%optflags"
 export CXXFLAGS="%optflags"
 
+make -f Makefile.cvs
 %configure2_5x
 
 %make
