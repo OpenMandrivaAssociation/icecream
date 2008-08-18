@@ -2,7 +2,7 @@
 
 Name: icecream
 Version: 0.9.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
@@ -16,6 +16,7 @@ Source4: icecream.sh
 Source5: icecream.csh
 Source7: logrotate.icecream
 Source8: logrotate.icecream-scheduler
+Patch0: icecc-0.9.1-postsvn848882.patch
 Requires: chkconfig
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
@@ -92,8 +93,8 @@ Requires: icecream = %{epoch}:%{version}
 
 %prep
 rm -rf %{buildroot}
-
 %setup -q -n icecc-%version
+%patch -p1
 
 %build
 
