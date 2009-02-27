@@ -1,8 +1,8 @@
 %define icecreamdir %{_libdir}/icecc
 
 Name: icecream
-Version: 0.9.1
-Release: %mkrel 3
+Version: 0.9.3
+Release: %mkrel 1
 Epoch: 2
 Group: Development/C
 Summary: Distributed p2p based compile system
@@ -16,7 +16,7 @@ Source4: icecream.sh
 Source5: icecream.csh
 Source7: logrotate.icecream
 Source8: logrotate.icecream-scheduler
-Patch0: icecc-0.9.1-postsvn848882.patch
+Patch0: icecc-0.9.3-string_literal.patch
 Requires: chkconfig
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
@@ -26,7 +26,6 @@ Buildroot: %{_tmppath}/%{name}-%{version}-root
 Icecream is a distributed p2p based compile system.
 
 %post
-[ -d /var/cache/icecream ] && rm -rf /var/cache/icecream/*
 %_post_service icecream
 
 %preun
@@ -94,14 +93,13 @@ Requires: icecream = %{epoch}:%{version}
 %prep
 rm -rf %{buildroot}
 %setup -q -n icecc-%version
-%patch -p1
+%patch0 -p0 -b .literal
 
 %build
 
 export CFLAGS="%optflags"
 export CXXFLAGS="%optflags"
 
-make -f Makefile.cvs
 %configure2_5x
 
 %make
@@ -119,7 +117,7 @@ install -d %{buildroot}%{_datadir}
 install -d %{buildroot}%{_bindir}
 install -d %{buildroot}/var/cache/icecream
 		
-make DESTDIR=%{buildroot} install
+%makeinstall_std
 
 install -m 755 %{SOURCE1} %buildroot%_sysconfdir/rc.d/init.d/icecream
 install -m 755 %{SOURCE2} %buildroot%_sysconfdir/rc.d/init.d/icecream-scheduler
