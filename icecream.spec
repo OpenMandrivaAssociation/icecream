@@ -1,7 +1,7 @@
 %define icecreamdir %{_libdir}/icecc
 
 Name: icecream
-Version: 0.9.3
+Version: 0.9.3.958794
 Release: %mkrel 1
 Epoch: 2
 Group: Development/C
@@ -16,7 +16,6 @@ Source4: icecream.sh
 Source5: icecream.csh
 Source7: logrotate.icecream
 Source8: logrotate.icecream-scheduler
-Patch0: icecc-0.9.3-string_literal.patch
 Requires: chkconfig
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
@@ -93,7 +92,6 @@ Requires: icecream = %{epoch}:%{version}
 %prep
 rm -rf %{buildroot}
 %setup -q -n icecc-%version
-%patch0 -p0 -b .literal
 
 %build
 
