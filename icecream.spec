@@ -1,15 +1,13 @@
 %define icecreamdir %{_libdir}/icecc
-%define Werror_cflags %nil
 
 Name: icecream
-Version: 0.9.2
+Version: 0.9.4
 Release: %mkrel 1
 Epoch: 3
 Group: Development/C
 Summary: Distributed p2p based compile system
 License: GPLv2+
 URL: http://en.opensuse.org/Icecream
-Patch0: icecc-0.9.2-buildfix.patch
 Source0: ftp://ftp.suse.com/pub/projects/icecream/icecc-%{version}.tar.bz2
 Source1: init.icecream
 Source2: init.icecream-scheduler
@@ -93,8 +91,6 @@ Requires: icecream = %{epoch}:%{version}
 
 %prep
 %setup -q -n icecc-%version
-%patch0 -p0 -b .buildfix
-
 
 %build
 export CFLAGS="%optflags"
