@@ -127,11 +127,8 @@ install -m 644 %{SOURCE8} %buildroot%_sysconfdir/logrotate.d/icecream-scheduler
 # symlinks for libtool
 cd %{buildroot}%{icecreamdir}/bin/
 pref=`gcc -dumpmachine`
-# We need mandriva too, not only manbo
-mdvpref=`echo $pref | sed -e "s,manbo,mandriva,g"`
 for a in cc gcc g++ c++; do
-	ln -s %_bindir/icecc $pref-$a
-	ln -s %_bindir/icecc $mdvpref-$a
+   ln -s %_bindir/icecc $pref-$a
    ln -s %_bindir/icecc $a
    rm -f %buildroot%_bindir/$a
 done
