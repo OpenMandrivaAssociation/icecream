@@ -1,0 +1,9 @@
+sources:
+  "icecc-0.9.4.tar.bz2:"	8211a50bd45e2a05b0e682489bf1f9038b907b5e
+  "icecream.csh:"	8dab27dcc970eb32a6ffa8a029be734334af25f1
+  "icecream.sh:"	313d4f405c73f8c59cc3ef493b9f20aeef7c8549
+  "init.icecream:"	6f895e42224eac057a627aac2543556713378d94
+  "init.icecream-scheduler:"	163cca6fd94c39c63eef7a5cdf3457265edd84c6
+  "logrotate.icecream:"	094539b219dffe6e3baf6966ba7aff5179bcf99f
+  "logrotate.icecream-scheduler:"	1f18a73922cd8813bb639fe9a8fd7e9b25c31ada
+  "sysconfig.icecream:"	6aa9b028151d8bffd19969d5e095302ccbf608b3
