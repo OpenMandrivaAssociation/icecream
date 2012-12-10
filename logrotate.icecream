@@ -1,0 +1,7 @@
+/var/log/icecream.log {
+	missingok
+	daily
+	compress
+}
+
+

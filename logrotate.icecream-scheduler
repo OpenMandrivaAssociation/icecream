@@ -1,0 +1,6 @@
+/var/log/scheduler.log {
+	missingok
+	daily
+	compress
+}
+
