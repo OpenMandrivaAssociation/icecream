@@ -7,4 +7,3 @@ if [ ! -f /etc/sysconfig/ccache ]; then
 	PATH=$ICECREAMDIR/bin:$PATH
 	export PATH
 fi
-
