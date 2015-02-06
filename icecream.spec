@@ -2,7 +2,7 @@
 
 Name:		icecream
 Version:	0.9.7
-Release:	4
+Release:	5
 Epoch:		3
 Group:		Development/C
 Summary:	Distributed p2p based compile system
