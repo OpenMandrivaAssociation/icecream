@@ -7,7 +7,7 @@ Epoch:		3
 Group:		Development/C
 Summary:	Distributed p2p based compile system
 License:	GPLv2+
-URL:		http://en.opensuse.org/Icecream
+URL:		https://en.opensuse.org/Icecream
 Source0:	ftp://ftp.suse.com/pub/projects/icecream/icecc-%{version}.tar.bz2
 Source1:	icecream.service
 Source2:	icecream-scheduler.service
