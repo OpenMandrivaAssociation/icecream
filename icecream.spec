@@ -22,6 +22,8 @@ Patch0:		icecream-0.9.7-fix-build.patch
 Requires(post):	rpm-helper
 Requires(preun):rpm-helper
 
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	systemd
 BuildRequires:	libcap-ng-devel
 BuildRequires:	docbook-utils
